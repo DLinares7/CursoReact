@@ -1,29 +1,29 @@
-import { ItemCounter } from "./shopping-cart/ItemCounter";
+import { ItemCounter } from './shopping-cart/ItemCounter';
 
 interface ItemInCart {
-    productName: string,
-    quantity: number,
+  productName: string;
+  quantity: number;
 }
 
 const itemsInCart: ItemInCart[] = [
-    { productName: "Nintendo", quantity: 5 },
-    { productName: "Sega", quantity: 3 },
-    { productName: "PlayStation", quantity: 9 },
-]
+  { productName: 'Nintendo Switch 2', quantity: 1 },
+  { productName: 'Pro Controller', quantity: 2 },
+  { productName: 'Super Smash', quantity: 5 },
+];
 
 export function FirstStepsApp() {
-    return (
-        <>
-            <h1>Carrito de Compras</h1>
-            {
-                itemsInCart.map(({ productName, quantity }) => (
-                    <ItemCounter key={productName} name={productName} quantity={quantity} />
-                ))
-            }
-            {/* <ItemCounter name="Nintendo" quantity={5} />
-            <ItemCounter name="Sega" quantity={4} />
-            <ItemCounter name="PlayStation" quantity={3} /> */}
-        </>
+  return (
+    <>
+      <h1>Carrito de compras</h1>
 
-    )
+      {itemsInCart.map(({ productName, quantity }) => (
+        <ItemCounter key={productName} name={productName} quantity={quantity} />
+      ))}
+
+      {/* <ItemCounter name="Nintendo Switch 2" quantity={1} />
+      <ItemCounter name="Pro Controller" quantity={2} />
+      <ItemCounter name="Super Smash" quantity={3} />
+      <ItemCounter name="Super Mario" quantity={3} /> */}
+    </>
+  );
 }
